@@ -1,0 +1,23 @@
+import numpy as np
+
+# correlation coefficient function using inbuilt correlation function
+def calculate_correlation(x, y):
+    correlation_coefficient = np.corrcoef(x, y)[0, 1]
+    
+    return correlation_coefficient
+
+list1 = [1, 2, 3, 4, 5]
+list2 = [2, 4, 6, 8, 10]
+
+corr = calculate_correlation(list1, list2)
+print('Correlation Coefficient:', corr)
+
+# correlation coefficient function using scipy
+from scipy.stats import pearsonr
+
+def correlation_coefficient(list1, list2):
+    corr, _ = pearsonr(list1, list2)
+    return corr
+
+corr = correlation_coefficient(list1, list2)
+print('Correlation Coefficient:', corr)
